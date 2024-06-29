@@ -8,6 +8,7 @@
 
 int main(){
     std::cout << "Size of Board: " << sizeof(Board) << std::endl;
+    std::cout << &Board[0][0] << std::endl;
     input();
     assignPos();
     output();
