@@ -1,0 +1,3 @@
+/Users/timheilmann/Developer/C++/Schiffe Versenken/build/CMakeFiles/schiffe-versenken.dir
+/Users/timheilmann/Developer/C++/Schiffe Versenken/build/CMakeFiles/edit_cache.dir
+/Users/timheilmann/Developer/C++/Schiffe Versenken/build/CMakeFiles/rebuild_cache.dir
