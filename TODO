@@ -1,0 +1,9 @@
+- [ ] Add function that finds all adjacent ships and stores them into an array 
+      with its Length
+      its StartXPos
+      its StartYPos
+- [ ] Add multiplayer using interprocessor communication or a socket
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
