@@ -2,10 +2,14 @@
 #include <unistd.h>
 #include <cstdio.h>
 #include <atomic.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
 
-struct Packet{
-    unsigned char x : 4;
-    unsigned char y : 4;
-    unsigned char isShip : 1;
-    unsigned char isSunken : 1;
-};
+void createSocket(){
+    int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    if (sockfd < 0) {
+        std::cerr << "Error creating socket" << std::endl;
+        return 1;
+    }
+}
