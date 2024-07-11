@@ -17,10 +17,21 @@ void outputShips(const std::array<std::array<Field, MAX_X>, MAX_Y> Board){
     }
 }
 
-void findShips(const std::array<std::array<Field, MAX_X>, MAX_Y> Board){
-    for(int j = 0; j < 10; j++){
-        find()
-    }
+int left(int x, int y){
+
 }
 
+
+void findShips(const std::array<std::array<Field, MAX_X>, MAX_Y> Board){
+    unsigned char currX = 0;
+    unsigned char currY = 0;
+    unsigned char shipsCounter = 0;
+    if(Board[currX][currY].isShip == true) && (Board[currX][currY].visited == 0){
+        Ships[shipsCounter].startX = currX;
+        Ships[shipsCounter].startY = currY;
+        Board[currX][currY].visited = true;
+        
+    }
+    
+}
 #endif

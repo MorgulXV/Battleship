@@ -10,12 +10,18 @@
 #include <cstdlib>
 #include <array>
 
+struct pos{
+    int x;
+    int y;
+};
+
 struct Field
 {
     unsigned char isShip : 1;
     unsigned char isSunken : 1;
     unsigned char x : 4;
     unsigned char y : 4;
+    unsigned char visited : 0;
 
     Field() : isShip(0), isSunken(0), x(0), y(0) {}
 };
