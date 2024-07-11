@@ -6,26 +6,6 @@
 #include "setup.hpp"
 #include "input.hpp"
 
-namespace alge{
-    
-    int up(int x){
-        return x++;
-    }
-
-    int down(int x){
-        return x--;
-    }
-
-    int left(int y){
-        return y--;
-    }
-
-    int right(int y){
-        return y++;
-    }
-
-}
-
 std::array<Ship, 5> searchAdjacentShips(const std::array<std::array<Field, MAX_X>, MAX_Y> Board){
     for(int j = 0; j < 10; j++){
         for(int k = 0; k < 10; k++){
