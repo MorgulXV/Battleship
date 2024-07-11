@@ -1,5 +1,5 @@
-#ifndef KELP_HPP
-#define KELP_HPP
+#ifndef ALGORITHM_HPP
+#define ALGORITHM_HPP
 
 #include <array>
 #include <algorithm>
@@ -7,8 +7,8 @@
 #include "input.hpp"
 
 void outputShips(const std::array<std::array<Field, MAX_X>, MAX_Y> Board){
-    for(int j = 0; j < 10; j++){
-        for(int k = 0; k < 10; k++){
+    for(int j = 0; j < MAX_X; j++){
+        for(int k = 0; k < MAX_Y; k++){
             if(Board[j][k].isShip == true){
                 std::cout << "Ship at x:" << j << "\n";
                 std::cout << "Ship at y:" << k << "\n";
@@ -17,5 +17,10 @@ void outputShips(const std::array<std::array<Field, MAX_X>, MAX_Y> Board){
     }
 }
 
+void findShips(const std::array<std::array<Field, MAX_X>, MAX_Y> Board){
+    for(int j = 0; j < 10; j++){
+        find()
+    }
+}
 
 #endif

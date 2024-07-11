@@ -1,3 +1,5 @@
+#ifndef MULTIPLAYER_HPP
+#define MULTIPLAYER_HPP
 #include "setup.hpp"
 #include <unistd.h>
 #include <cstdio.h>
@@ -12,3 +14,5 @@ void createSocket(){
         std::cerr << "Error creating socket" << std::endl;
     }
 }
+
+#endif
