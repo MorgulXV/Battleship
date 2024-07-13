@@ -21,7 +21,7 @@ struct Field
     unsigned char isSunken : 1;
     unsigned char x : 4;
     unsigned char y : 4;
-    unsigned char visited : 0;
+    unsigned char visited : 1;
 
     Field() : isShip(0), isSunken(0), x(0), y(0) {}
 };
