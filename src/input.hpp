@@ -28,7 +28,7 @@ void input(){
         int x;
         int y;
         int c = 0;
-        std::cout << termcolor::white << "Hello, please enter ship x cordinates\n";
+        std::cout << termcolor::white << "Hello, please enter ship x start cordinate\n";
         std::cin >> x;
         if(x > MAX_X or x < MIN_X){
             std::cout << termcolor::red << "Error invalid coordinate\n" << termcolor::reset;
@@ -38,7 +38,7 @@ void input(){
             std::cout << termcolor::red << "Error invalid input type\n" << termcolor::reset;
             throw std::invalid_argument{"InvalidInputType"};
         }
-        std::cout << termcolor::white << "Hello, please enter ship y cordinates\n";
+        std::cout << termcolor::white << "Hello, please enter ship y start cordinate\n";
         std::cin >> y;
         if(y > MAX_Y or y < MIN_Y){
             std::cout << termcolor::red << "Error invalid coordinate\n" << termcolor::reset;
