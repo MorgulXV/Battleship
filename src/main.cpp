@@ -4,7 +4,7 @@
 #include "input.hpp"
 #include "termcolor.hpp"
 #include "reset.hpp"
-#include "kelp.hpp"
+#include "algorithm.hpp"
 
 int main(){
     std::cout << "Size of Board: " << sizeof(Board) << std::endl;
