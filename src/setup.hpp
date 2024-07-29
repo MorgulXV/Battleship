@@ -5,11 +5,13 @@
 #define MIN_X 0
 #define MIN_Y 0
 #define MAX_SHIPS 5
+#define MAX_SHIP_LENGTH
 
 #include <iostream>
 #include <cstdlib>
 #include <array>
 
+int shipCounter = 0;
 struct pos{
     int x;
     int y;
@@ -34,7 +36,7 @@ struct Ship
     int startY;
     int endX;
     int endY;
-    int length;
+    int length = 5;
 };
 
 std::array<Ship, 5> Ships;

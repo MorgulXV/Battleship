@@ -12,7 +12,7 @@ int main(){
     input();
     assignPos();
     output();
-    searchAdjacentShips(Board);
+    outputShips(Board);
     reset();
     return 0;
 }
