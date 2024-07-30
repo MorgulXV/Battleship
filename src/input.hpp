@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include "termcolor.hpp"
 #include <stdexcept>
+#include "game.hpp"
 
 void setShip(int x, int y, int l, bool d){
     Ships[shipCounter].startX = x;

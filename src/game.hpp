@@ -17,7 +17,7 @@ void outputShips(const std::array<std::array<Field, MAX_X>, MAX_Y> Board){
     }
 }
 
-startGame(){
-    
+void startGame(){
+
 }
 #endif
