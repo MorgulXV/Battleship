@@ -5,5 +5,5 @@
 - [ ] Add multiplayer using interprocessor communication or a socket
 - [ ] Add hit function
 - [ ] make check function that looks if the ships are placed right
-- [ ] 
+- [ ] implement gameStart function
 - [ ] 

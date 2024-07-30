@@ -95,6 +95,9 @@ void input(){
             std::cout << termcolor::red << "Error invalid input type\n" << termcolor::reset;
             throw std::invalid_argument{"InvalidInputType"};
         }
+        if(i==5){
+            startGame();
+        }
         
     }
 }
