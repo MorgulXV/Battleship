@@ -5,7 +5,7 @@
 #define MIN_X 0
 #define MIN_Y 0
 #define MAX_SHIPS 5
-#define MAX_SHIP_LENGTH
+#define MAX_SHIP_LENGTH 5
 
 #include <iostream>
 #include <cstdlib>
@@ -36,7 +36,7 @@ struct Ship
     int startY;
     int endX;
     int endY;
-    int length = 5;
+    int length = MAX_SHIP_LENGTH;
 };
 
 std::array<Ship, 5> Ships;
