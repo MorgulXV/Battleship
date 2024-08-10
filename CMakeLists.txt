@@ -1,5 +1,5 @@
 	# Minimum CMake version required, we'll just use the latest version.
-    cmake_minimum_required(VERSION 3.30.0)
+    cmake_minimum_required(VERSION 3.30.2)
     # Project name, version and description
     project(schiffe-versenken DESCRIPTION "Schiffe Versenken in C++")
 

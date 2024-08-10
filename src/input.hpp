@@ -8,19 +8,31 @@
 #include <stdexcept>
 #include "game.hpp"
 
-void setShip(int x, int y, int l, bool d){
+void setShip(int x, int y, bool d, int l = 5){
     Ships[shipCounter].startX = x;
     Ships[shipCounter].startY = y;
-    if(d==true){
-        for(int i = 0; i<=l; i++){
-            Board[x][y].isShip=1;
-            x++;
+    if(d==true){//true is down
+        if(x==6){
+                std::cout << termcolor::red << "Error invalid ship placement\n" << termcolor::reset;
+                throw std::invalid_argument{"InvalidShipPlacement"};
+            }
+            else{
+                for(int i = 0; i<5; i++){
+                Board[x][y].isShip=1;
+                x++;
+                }
             }
         }
-        if(d==false){
-        for(int i = 0; i<=l; i++){
-            Board[x][y].isShip=1;
-            y++;
+        if(d==false){//false is right
+        if(x==6){
+                std::cout << termcolor::red << "Error invalid ship placement\n" << termcolor::reset;
+                throw std::invalid_argument{"InvalidShipPlacement"};
+            }
+            else{
+                for(int i = 0; i<5; i++){
+                Board[x][y].isShip=1;
+                y++;
+                }
             }
         }
         Ships[shipCounter].endX = x;
@@ -88,7 +100,7 @@ void input(){
             std::cout << termcolor::red << "Error invalid input type\n" << termcolor::reset;
             throw std::invalid_argument{"InvalidInputType"};
         }
-        setShip(x,y,l,d);
+        setShip(x,y,d,l);
         std::cout << termcolor::white << "Do you want to enter more? 1 = no 0 = yes\n";
         std::cin >> i;
         std::cout << termcolor::reset << std::endl;
