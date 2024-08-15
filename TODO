@@ -1,9 +1,9 @@
-- [ ] Add function that finds all adjacent ships and stores them into an array 
+- [X] Add function that stores ships into an array 
       with its Length
       its StartXPos
       its StartYPos
 - [ ] Add multiplayer using interprocessor communication or a socket
 - [ ] Add hit function
-- [ ] make check function that looks if the ships are placed right
+- [X] make check function that looks if the ships are placed right
 - [ ] implement gameStart function
 - [ ] Add multiple ship Lengths

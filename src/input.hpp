@@ -9,14 +9,24 @@
 #include "game.hpp"
 
 void setShip(int x, int y, bool d, int l = 5){
-    Ships[shipCounter].startX = x;
-    Ships[shipCounter].startY = y;
+    int z = y;
+    int f = x;
     if(d==true){//true is down
+        for(int i = 0; i<5; i++){
+                if(Board[f][z].isShip==true){
+                    std::cout << termcolor::red << "Error you cant let ships intersect\n" << termcolor::reset;
+                    throw std::invalid_argument{"InvalidShipPlacement"};
+                }else{
+                    f++;
+                }
+                }
         if(x==6){
                 std::cout << termcolor::red << "Error invalid ship placement\n" << termcolor::reset;
                 throw std::invalid_argument{"InvalidShipPlacement"};
             }
             else{
+                Ships[shipCounter].startX = x;
+                Ships[shipCounter].startY = y;
                 for(int i = 0; i<5; i++){
                 Board[x][y].isShip=1;
                 x++;
@@ -24,11 +34,21 @@ void setShip(int x, int y, bool d, int l = 5){
             }
         }
         if(d==false){//false is right
-        if(x==6){
+            for(int i = 0; i<5; i++){
+                if(Board[f][z].isShip==true){
+                    std::cout << termcolor::red << "Error you cant let ships intersect\n" << termcolor::reset;
+                    throw std::invalid_argument{"InvalidShipPlacement"};
+                }else{
+                    z++;
+                }
+                }
+            if(y==6){
                 std::cout << termcolor::red << "Error invalid ship placement\n" << termcolor::reset;
                 throw std::invalid_argument{"InvalidShipPlacement"};
             }
             else{
+                Ships[shipCounter].startX = x;
+                Ships[shipCounter].startY = y;
                 for(int i = 0; i<5; i++){
                 Board[x][y].isShip=1;
                 y++;
@@ -107,9 +127,6 @@ void input(){
         if(std::cin.fail()){
             std::cout << termcolor::red << "Error invalid input type\n" << termcolor::reset;
             throw std::invalid_argument{"InvalidInputType"};
-        }
-        if(i==5){
-            startGame();
         }
         
     }
