@@ -1,6 +1,7 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
+#include <ncurses.h>
 #include <array>
 #include <algorithm>
 #include "setup.hpp"
