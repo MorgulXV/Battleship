@@ -17,6 +17,8 @@ struct pos{
     int y;
 };
 
+bool isClient;
+
 struct Field
 {
     unsigned char isShip : 1;

@@ -5,6 +5,7 @@
 #include "termcolor.hpp"
 #include "reset.hpp"
 #include "game.hpp"
+#include "multiplayer.hpp"
 
 int main(){
     std::cout << "Size of Board: " << sizeof(Board) << std::endl;
@@ -13,6 +14,7 @@ int main(){
     assignPos();
     output();
     outputShips(Board);
+    openTerminal();
     reset();
     return 0;
 }

@@ -2,17 +2,30 @@
 #define MULTIPLAYER_HPP
 #include "setup.hpp"
 #include <unistd.h>
-#include <cstdio.h>
-#include <atomic.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
+#include <stdatomic.h>
+#include <cstdlib>
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include "/Users/timheilmann/homebrew/Cellar/zeromq/4.3.5_1/include/zmq.h"
 
-void createSocket(){
-    int sockfd = socket(AF_INET, SOCK_STREAM, 0);
-    if (sockfd < 0) {
-        std::cerr << "Error creating socket" << std::endl;
-    }
+
+void setClient(){
+    int tmp;
+    std::cout << "What are you?: Client(1), Host(0)";
+    std::cin >> tmp;
+    if (std::cin.fail()){
+            std::cout << termcolor::red << "Error invalid input type\n" << termcolor::reset;
+            throw std::invalid_argument{"InvalidInputType"};
+        }else{
+            isClient = tmp;
+        }
 }
+
+
+void openTerminal(){
+    execlp("open", "-n", "/System/Applications/Utilities/Terminal.app", NULL);
+}
+
 
 #endif
