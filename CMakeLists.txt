@@ -1,15 +1,23 @@
-	# Minimum CMake version required, we'll just use the latest version.
-    cmake_minimum_required(VERSION 3.30.2)
-    # Project name, version and description
-    project(schiffe-versenken DESCRIPTION "Schiffe Versenken in C++")
+# Minimum CMake version required
+cmake_minimum_required(VERSION 3.10)
 
-    # Create an executable
-    add_executable(${PROJECT_NAME}
-        src/main.cpp
-    )
+# Project name, version, and description
+project(battleship VERSION 1.0 DESCRIPTION "Battleship game in C++")
 
-    # Set C++ version
-    set_target_properties(${PROJECT_NAME} PROPERTIES
-        CXX_STANDARD 23
-        CXX_STANDARD_REQUIRED ON
-    )
+# Create an executable
+add_executable(${PROJECT_NAME}
+    src/main.cpp
+    src/multiplayer.hpp
+    src/game.hpp
+    src/input.hpp
+    src/output.cpp
+    src/reset.hpp
+    src/setup.hpp
+    src/termcolor.hpp
+)
+
+# Set C++ version
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    CXX_STANDARD 23
+    CXX_STANDARD_REQUIRED ON
+)

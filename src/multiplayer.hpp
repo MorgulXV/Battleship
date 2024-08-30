@@ -7,8 +7,6 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <sys/wait.h>
-#include "/Users/timheilmann/homebrew/Cellar/zeromq/4.3.5_1/include/zmq.h"
-
 
 void setClient(){
     int tmp;
@@ -22,10 +20,10 @@ void setClient(){
         }
 }
 
-bool hit(int x, int y){
-    //send message to other player
-    //returns true if ship is hit
+/*bool hit(int x, int y){
+    //sendPacket();
 }
+*/
 
 void openTerminal(){
     execlp("open", "-n", "/System/Applications/Utilities/Terminal.app", NULL);
@@ -33,7 +31,28 @@ void openTerminal(){
 }
 
 
-void runHost(){
+void Host(){
+    std::cout << "What port do you want to use to recieve and send packets ?\n";
+    std::cin >> port;
+    if(std::cin.fail() || port > 65535){
+        std::cout << termcolor::red << "Error invalid port\n" << termcolor::reset;
+    }else{
+        Host();
+    }
+}
+
+void Client(){
+    std::cout << "What port do you want to use to recieve and send packets ?\n";
+    std::cin >> port;
+    if(std::cin.fail() || port > 65535){
+        std::cout << termcolor::red << "Error invalid port\n" << termcolor::reset;
+    }else{
+        Client();
+    }
+}
+
+void createSocket(){
 
 }
+
 #endif

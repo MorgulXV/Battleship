@@ -11,6 +11,8 @@
 #include <cstdlib>
 #include <array>
 
+int port = 1234;
+
 int shipCounter = 0;
 struct pos{
     int x;
@@ -41,5 +43,21 @@ struct Ship
     int length = MAX_SHIP_LENGTH;
 };
 
+const int Mask = 0xF;
+
+struct Packet{
+    int x : 4;
+    int y : 4;
+
+    uint8_t merge(int x, int y){
+        x = this -> x;
+        y = this -> y;
+        uint8_t data;
+        uint8_t tmp = x;
+        tmp <<= 4;
+        data = (tmp & Mask) | y;
+        return data;
+    }
+};
 std::array<Ship, 5> Ships;
 #endif
