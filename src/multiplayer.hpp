@@ -18,14 +18,22 @@ void setClient(){
             std::cout << termcolor::red << "Error invalid input type\n" << termcolor::reset;
             throw std::invalid_argument{"InvalidInputType"};
         }else{
-            isClient = tmp;
+            isClient = bool(tmp);
         }
 }
 
+bool hit(int x, int y){
+    //send message to other player
+    //returns true if ship is hit
+}
 
 void openTerminal(){
     execlp("open", "-n", "/System/Applications/Utilities/Terminal.app", NULL);
+    
 }
 
 
+void runHost(){
+
+}
 #endif

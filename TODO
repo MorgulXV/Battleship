@@ -8,3 +8,6 @@
 - [ ] implement gameStart function
 - [ ] Add multiple ship Lengths
 - [ ]Add <ncurses.h>
+- [ ]Add output for board
+- [ ]Implement pipe
+- [ ]Add client server functionality
