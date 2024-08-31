@@ -1,1 +1,1 @@
-#include "/Users/timheilmann/homebrew/Cellar/zeromq/4.3.5_1/include/zmq.h"
+//add function that writes the data from the enemy in seperate terminal

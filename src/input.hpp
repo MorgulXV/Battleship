@@ -121,6 +121,11 @@ void input(){
             throw std::invalid_argument{"InvalidInputType"};
         }
         setShip(x,y,d,l);
+        counter++;
+        if(counter == 5){
+            //isClient();
+            break;
+        }
         std::cout << termcolor::white << "Do you want to enter more? 1 = no 0 = yes\n";
         std::cin >> i;
         std::cout << termcolor::reset << std::endl;

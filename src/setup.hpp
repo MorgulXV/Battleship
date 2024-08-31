@@ -10,8 +10,17 @@
 #include <iostream>
 #include <cstdlib>
 #include <array>
+#include <cstdint>
+#include <regex>
+#include <string>
+
+bool win;
 
 int port = 1234;
+std::string enemy_ip = "192.168.178.20";
+std::regex IPv4Regex(
+    R"((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?){3})"
+);
 
 int shipCounter = 0;
 struct pos{
@@ -43,19 +52,13 @@ struct Ship
     int length = MAX_SHIP_LENGTH;
 };
 
-const int Mask = 0xF;
 
 struct Packet{
     int x : 4;
     int y : 4;
-
-    uint8_t merge(int x, int y){
-        x = this -> x;
-        y = this -> y;
-        uint8_t data;
-        uint8_t tmp = x;
-        tmp <<= 4;
-        data = (tmp & Mask) | y;
+    
+    uint8_t merge() const{
+        uint8_t data = (static_cast<uint8_t>(x) << 4) | (static_cast<uint8_t>(y));
         return data;
     }
 };

@@ -4,9 +4,23 @@
 #include <unistd.h>
 #include <stdatomic.h>
 #include <cstdlib>
-#include <sys/types.h>
 #include <unistd.h>
-#include <sys/wait.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+
+
+
+void setupSocket(){
+
+}
+
+void server_or_Client(){
+    if(isClient == true){
+        void Client();
+    }else{
+        void Server();
+    }
+}
 
 void setClient(){
     int tmp;
@@ -18,7 +32,7 @@ void setClient(){
         }else{
             isClient = bool(tmp);
         }
-}
+    }
 
 /*bool hit(int x, int y){
     //sendPacket();
@@ -31,13 +45,25 @@ void openTerminal(){
 }
 
 
-void Host(){
+void Server(){
     std::cout << "What port do you want to use to recieve and send packets ?\n";
     std::cin >> port;
     if(std::cin.fail() || port > 65535){
         std::cout << termcolor::red << "Error invalid port\n" << termcolor::reset;
+        Server();
     }else{
-        Host();
+        std::cout << "Input IPv4 adress of the other player";
+        std::cin >> enemy_ip;
+        if(std::cin.fail()){
+        std::cout << termcolor::red << "Error invalid IPv4 adress\n" << termcolor::reset;
+        Server();
+    }
+    if (!std::regex_match(enemy_ip, IPv4Regex)) {
+        std::cout << termcolor::red << "Error invalid IPv4 adress\n" << termcolor::reset;
+        Server();
+        }else{
+            setupSocket();
+        }
     }
 }
 
@@ -46,13 +72,21 @@ void Client(){
     std::cin >> port;
     if(std::cin.fail() || port > 65535){
         std::cout << termcolor::red << "Error invalid port\n" << termcolor::reset;
+        Client();
     }else{
+        std::cout << "Input IPv4 adress of the other player";
+        std::cin >> enemy_ip;
+        if(std::cin.fail()){
+        std::cout << termcolor::red << "Error invalid IPv4 adress\n" << termcolor::reset;
         Client();
     }
-}
-
-void createSocket(){
-
+    if (!std::regex_match(enemy_ip, IPv4Regex)) {
+        std::cout << termcolor::red << "Error invalid IPv4 adress\n" << termcolor::reset;
+        Client();
+        }else{
+            setupSocket();
+        }
+    }
 }
 
 #endif

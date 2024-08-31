@@ -10,6 +10,8 @@
 int main(){
     std::cout << "Size of Board: " << sizeof(Board) << std::endl;
     std::cout << &Board[0][0] << std::endl;
+    setClient();
+    server_or_Client();
     input();
     assignPos();
     output();
