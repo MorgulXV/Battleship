@@ -1,6 +1,6 @@
 # Battleship
 Battleship Game in C++ using a multidimensional array
-# Installation
+# Build it yourself
 To build the executable go into the build directory
 ```cd build```
 and run
