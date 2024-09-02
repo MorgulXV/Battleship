@@ -15,8 +15,16 @@ void reset(){
         Ships[i].startX = 0;
         Ships[i].startY = 0;
         Ships[i].length = 0;
+    }for(int j = 0; j<10; j++){
+        for(int k = 0; k < 10; k++){
+            Enemy[j][k].isShip = 0;
+            Enemy[j][k].isSunken = 0;
+            Enemy[j][k].x = 0;
+            Enemy[j][k].y = 0;
+        }
     }
 }
+
 
 
 #endif

@@ -14,7 +14,7 @@ int main(){
     input();
     assignPos();
     output();
-    outputShips(Board);
+    //outputShips(Board);
     openTerminal();
     reset();
     return 0;

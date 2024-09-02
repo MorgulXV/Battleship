@@ -43,6 +43,7 @@ struct Field
 };
 
 std::array<std::array<Field, MAX_X>, MAX_Y> Board;
+std::array<std::array<Field, MAX_X>, MAX_Y> Enemy;
 
 struct Ship
 {
@@ -63,5 +64,15 @@ struct Packet{
         return data;
     }
 };
+
+struct firstPacket{
+    uint8_t data =  255;
+}
+
+struct winPacket{
+    uint8_t data = 240
+}
+
+
 std::array<Ship, 5> Ships;
 #endif

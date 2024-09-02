@@ -10,7 +10,7 @@ add_executable(${PROJECT_NAME}
     src/multiplayer.hpp
     src/game.hpp
     src/input.hpp
-    src/output.cpp
+    src/output.hpp
     src/reset.hpp
     src/setup.hpp
     src/termcolor.hpp

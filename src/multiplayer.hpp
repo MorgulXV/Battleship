@@ -4,9 +4,9 @@
 #include <unistd.h>
 #include <stdatomic.h>
 #include <cstdlib>
-#include <unistd.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+
 
 
 
@@ -14,10 +14,13 @@ void setupSocket(){
 
 }
 
-/*bool hit(int x, int y){
+bool hit(){
+    int x : 4;
+    int y : 4;
+    
     //sendPacket();
 }
-*/
+
 
 void openTerminal(){
     execlp("open", "-n", "/System/Applications/Utilities/Terminal.app", NULL);
@@ -85,4 +88,7 @@ void setClient(){
         }
     }
 
+void createPipe(){
+    
+}
 #endif
