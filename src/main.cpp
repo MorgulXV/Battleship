@@ -11,6 +11,7 @@ int main(){
     std::cout << "Size of Board: " << sizeof(Board) << std::endl;
     std::cout << &Board[0][0] << std::endl;
     setClient();
+    setupSocket();
     input();
     assignPos();
     output();

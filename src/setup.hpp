@@ -14,10 +14,11 @@
 #include <regex>
 #include <string>
 
-bool win;
+bool lost;
 
 int port = 1234;
 std::string enemy_ip = "192.168.178.20";
+std::string my_ip = "127.0.0.1";
 
 std::string pattern = R"(\b(?:(?:2(?:[0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9])\.){3}(?:(?:2([0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9]))\b)";
 std::regex IPv4Regex(pattern);
@@ -67,11 +68,11 @@ struct Packet{
 
 struct firstPacket{
     uint8_t data =  255;
-}
+};
 
 struct winPacket{
-    uint8_t data = 240
-}
+    uint8_t data = 240;
+};
 
 
 std::array<Ship, 5> Ships;
